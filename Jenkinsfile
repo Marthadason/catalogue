@@ -24,10 +24,19 @@ pipeline {
             }   
         }
 
+
         stage('Deploy') { 
             steps {
                 echo "Deployment"   
             }   
         }
     }
+    
+    post{
+        always{
+            echo 'Cleaning up workspace'
+            deleteDir()
+        }
+    }
+
 }
