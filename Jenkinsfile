@@ -11,13 +11,19 @@ pipeline {
                 echo "unit testing is done here..abcd. s"
             }
         }
-        // sonar-scanner command expert sonar-project.properties should be available
-        stage('Sonar Scan') { 
+        // // sonar-scanner command expert sonar-project.properties should be available
+        // stage('Sonar Scan') { 
+        //     steps {
+        //         sh 'ls -ltr' 
+        //         sh 'sonar-scanner'   
+        //     }   
+        // }
+        stage('build') { 
             steps {
-                sh 'ls -ltr' 
-                sh 'sonar-scanner'   
+                sh 'ls -ltr'  
             }   
         }
+
         stage('Deploy') { 
             steps {
                 echo "Deployment"   
