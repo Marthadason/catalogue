@@ -18,9 +18,10 @@ pipeline {
         //         sh 'sonar-scanner'   
         //     }   
         // }
-        stage('build') { 
+        stage('Build') { 
             steps {
-                sh 'ls -ltr'  
+                sh 'ls -ltr'
+                sh 'zip -r ./* --exclude=.git '  
             }   
         }
 
@@ -35,7 +36,7 @@ pipeline {
     post{
         always{
             echo 'Cleaning up workspace'
-            deleteDir()
+            // deleteDir()
         }
     }
 
