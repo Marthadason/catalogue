@@ -38,7 +38,7 @@ pipeline {
                     artifacts: [
                         [artifactId: 'catalogue',
                         classifier: '',
-                        file: 'Catalogu-1.zip'
+                        file: 'catalogue.zip'
                         type: 'zip']
                     ]
                 )
